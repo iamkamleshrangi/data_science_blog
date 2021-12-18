@@ -2,9 +2,6 @@
 stack overflow 2017, Developers survey 2017
 # What does the developer's survey think about Job Satisfaction?
 
-**Process Flow**
-![plot](process_flow.png)
-
 ### Introduction
 
 I’ll use the StackOverflow developer survey 2017, and we will take a closer look at these questions and the data which contains 64000 reviews from 213 countries, the aim of the survey was to understand the job-related aspect in the software development field.

@@ -34,7 +34,7 @@ The given dataset contains two file, one contains the survey data and second con
 ### Prepare Data
 Need to prepaer the data to answer the above questions, however there are alot of the columns which needs to takle based on logic, So I'm selecting the columns based on the question which need to be explore. 
 
--  **Does employment status related to job satisfaction? **
+-  **Does employment status related to job satisfaction?**
 
 The above question is related to **EmploymentStatus and JobSatisfaction**, so we are exploring the columns and found that no missing values for EmploymentStatus however found 21.4% missing values in JobSatisfaction columns, one way to drop those row but that will leads to less data to explore relatively, second is to take the means of the JobSatisfaction and fill the missing value with that, that will help us to be use most of the data for analysis so that we can pull out the most of it. 
 

@@ -34,12 +34,12 @@ The given dataset contains two file, one contains the survey data and second con
 ### Prepare Data
 Need to prepaer the data to answer the above questions, however there are alot of the columns which needs to takle based on logic, So I'm selecting the columns based on the question which need to be explore. 
 
-- Does employment status related to job satisfaction?
+-  **Does employment status related to job satisfaction? **
 
 The above question is related to **EmploymentStatus and JobSatisfaction**, so we are exploring the columns and found that no missing values for EmploymentStatus however found 21.4% missing values in JobSatisfaction columns, one way to drop those row but that will leads to less data to explore relatively, second is to take the means of the JobSatisfaction and fill the missing value with that, that will help us to be use most of the data for analysis so that we can pull out the most of it. 
 
 ```console
-# code findout missing values, 0 means no missing, other then that represent proportion of missing values
+# code findout missing values, 0 means no missing, otherthen that represent proportion of missing values
 > survey_df['EmploymentStatus'].isnull().mean()
 > 0
 
@@ -53,12 +53,12 @@ The above question is related to **EmploymentStatus and JobSatisfaction**, so we
 > 0
 # 0, means all the value got filled with mean of the JobSatisfaction column.
 ```
-- Are you a hobby programmer or/and contributor to open source projects, how it is related to job satisfaction?
+- **Are you a hobby programmer or/and contributor to open source projects, how it is related to job satisfaction?**
 
 The question maily takes about the programming as hobby, based on that we want to find the connection between the job satisfaction and what they are doing as hobby, if there is match between both of them, let's prepare for that.
 
 ```console
-# Code findout missing values, 0 means no missing,
+# Code findout missing values, 0 means no missing
 > survey_df['ProgramHobby'].isnull().mean()
 > 0
 
@@ -67,9 +67,19 @@ The question maily takes about the programming as hobby, based on that we want t
 > 0
 ```
 
-- Does Salary gives you job satisfaction?
+- **Does Salary gives you job satisfaction?**
 
+Find out the salary the relationship between Salary and JobSatisfaction, The salary columns contains **~75%** missing values, and **~25%** in the data conatains values in it, at that position we have two options, first is to deleted or fill the mean of the salary. If we fill mean value that can mislead the outcome as we have few values in the salary columns, so clearly better option is to deleted the missing values and compair the with job satisfaction.
 
+```console
+# Code findout missing proportion in column
+> survey_df['Salary'] = survey_df['Salary'].isnull().mean()
+> 0.7491
+
+# drop missing values in salary column 
+> drop_sal = survey_df.dropna(subset=['Salary'])
+> survey_df['Salary'].isnull().mean() 
+```
 
 ### Is empoyment status has relation to job statisfaction?
 Reviewed the JobSatisfaction and EmploymentStatus in the survey_df. That turn out be no missing value in EmploymentStatus, however I found 0.2143 missing values in 

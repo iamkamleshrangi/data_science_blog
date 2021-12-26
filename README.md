@@ -2,16 +2,37 @@
 stack overflow 2017, Developers survey 2017
 # What does the developer's survey think about Job Satisfaction?
 
+To understand the data, we require a industry standard model for doing the analysis, for now, I'm selecting CIRSP-DM method, it is efficient with clear goals on each steps. CRISP-DM stands for Cross-industry standard process for data mining, is an open standard process model that describes common approaches used by data mining experts. It is the most widely-used analytics model to understand and answer data related questions. Base line of the CIRSP-DM as follows.
+- Business Understanding
+- Data Understanding 
+- Prepare Data 
+- Data Modeling (Optional)
+- Evaluate the Results
+- Deploy
+
+## Business Understanding
+
+Job satisfaction survy is the most importance topic for business, as companies pay on avarage $1K per employee on training program, It would be better if they can understand the trand of the employees job satisfaction, That can leads to understand the current trands and satisfaction levels within the organization, so that business can take best possible step towards it. By doing so, they can save alot of companies cost and time to encorporate businesses. I want to demonstrate few points which can help of answer few of the question towards job satisfaction. 
+
 ### Introduction
 
 I’ll use the StackOverflow developer survey 2017, and we will take a closer look at these questions and the data which contains 64000 reviews from 213 countries, the aim of the survey was to understand the job-related aspect in the software development field.
 
 There are two DataFrame in the dataset, first is schema_df and second is survey_df. The schema_df contains the schema of the question which being asked during the servey process, that has one-to-many answer related to the questions. The survey_df contains the result the feedback for the question.
 
-Step 1:
-1. Took over view of the both dataFrame in the notebook.
-2. Visulized null value in the notebook to idenfity the columns and there presence in the columns itself.
-3. Visulize the correlation with the help of heatmap, to identify relations.
+- 1. Took over view of the both dataFrame in the notebook.
+- 2. Visulized null value in the notebook to idenfity the columns and there presence in the columns itself.
+- 3. Visulize the correlation with the help of heatmap, to identify relations.
+
+## Data Understanding
+The given dataset contains two file, one contains the survey data and second contains the schema of the dataset.
+**Survey dataset:** The aim of the survey was to understand the job-related aspect in the development field so based on feedback collected in the the survey data set contains 51392 rows with 154 columns outof which only these columns has no missing values, namaly Respondent, Professional, ProgramHobby, Country, University, EmploymentStatus, FormalEducation in total 7, however 147 columns contains missing value in it so we have to perform some data wraggling methods to fix that issue.
+
+**Schema dataset:** In the schema dataset contains questions which were asked during the survey, It has all the columns which match with survey dataset columns and question related to the column name, it contains, 154 questions with two cloumns, namaly column and question. Some of the question contains multiple selection in the survey dataset that we need to take care in frequecy graph or analysis. 
+
+### Prepare Data
+Need to prepaer the data to answer the above questions, 
+
 
 ### Is empoyment status has relation to job statisfaction?
 Reviewed the JobSatisfaction and EmploymentStatus in the survey_df. That turn out be no missing value in EmploymentStatus, however I found 0.2143 missing values in 

@@ -20,18 +20,44 @@ I’ll use the StackOverflow developer survey 2017, and we will take a closer lo
 
 There are two DataFrame in the dataset, first is schema_df and second is survey_df. The schema_df contains the schema of the question which being asked during the servey process, that has one-to-many answer related to the questions. The survey_df contains the result the feedback for the question.
 
-- 1. Took over view of the both dataFrame in the notebook.
-- 2. Visulized null value in the notebook to idenfity the columns and there presence in the columns itself.
-- 3. Visulize the correlation with the help of heatmap, to identify relations.
+- Took over view of the both dataFrame in the notebook.
+- Visulized null value in the notebook to idenfity the columns and there presence in the columns itself.
+- Visulize the correlation with the help of heatmap, to identify relations.
 
 ## Data Understanding
 The given dataset contains two file, one contains the survey data and second contains the schema of the dataset.
+
 **Survey dataset:** The aim of the survey was to understand the job-related aspect in the development field so based on feedback collected in the the survey data set contains 51392 rows with 154 columns outof which only these columns has no missing values, namaly Respondent, Professional, ProgramHobby, Country, University, EmploymentStatus, FormalEducation in total 7, however 147 columns contains missing value in it so we have to perform some data wraggling methods to fix that issue.
 
 **Schema dataset:** In the schema dataset contains questions which were asked during the survey, It has all the columns which match with survey dataset columns and question related to the column name, it contains, 154 questions with two cloumns, namaly column and question. Some of the question contains multiple selection in the survey dataset that we need to take care in frequecy graph or analysis. 
 
 ### Prepare Data
-Need to prepaer the data to answer the above questions, 
+Need to prepaer the data to answer the above questions, however there are alot of the columns which needs to takle based on logic, So I'm selecting the columns based on the question which need to be explore. 
+- Does employment status related to job satisfaction?
+
+```console
+# code give the missing proportion in the columns
+> survey_df['EmploymentStatus'].isnull().mean()
+> 0
+
+# 0, reprensent no missing values in EmploymentStatus columns. 
+> survey_df['JobSatisfaction'].isnull().mean()
+> 0.214
+# 0.214, represent that there are 21.4% of the data is missing, one way is to drop those values, however it will reduce the size of the data, it's better to be
+# in the possition that we can pull out maximum of the data set.
+
+# filling the values with mean
+> survey_df['JobSatisfaction'] = survey_df['JobSatisfaction'].fillna(survey_df['JobSatisfaction'].mean())
+> survey_df['JobSatisfaction'].isnull().mean()
+> 0
+# 0, means all the value got filled with mean of the JobSatisfaction column.
+```
+
+- Are you a hobby programmer or/and contributor to open source projects, how it is related to job satisfaction?
+Above two question contains total of three columns need to be prepared, as columns name **EmploymentStatus**, **JobSatisfaction**, **ProgramHobby**, I explore those columns for you, EmploymentStatus contains no missing values 
+
+
+- Does Salary gives you job satisfaction?
 
 
 ### Is empoyment status has relation to job statisfaction?

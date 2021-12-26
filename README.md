@@ -81,7 +81,7 @@ Find out the salary the relationship between Salary and JobSatisfaction, The sal
 > survey_df['Salary'].isnull().mean() 
 ```
 
-### Is empoyment status has relation to job statisfaction?
+- **Is empoyment status has relation to job statisfaction?**
 Reviewed the JobSatisfaction and EmploymentStatus in the survey_df. That turn out be no missing value in EmploymentStatus, however I found 0.2143 missing values in 
 JobSatisfaction column, so filled all the NA value of the JobSatisfaction by filling in the mean of the column, by doing so I got the appropate dataframe to find the relation in between. 
 
@@ -148,7 +148,15 @@ JobSatisfaction
 9.0     64089.922631
 10.0    61440.444486
 ```
-** hobby programmer, contributor and EmploymentStatus**
+**hobby programmer, contributor and EmploymentStatus**
+
 ![plot](salary_and_employmentStatus.png)
 
 There are avidence that salary gives motivation towards job satisfaction, both are proportional to each other.
+
+### Conclusion
+
+We talk about the parameter and job satisfaction based on the data provided by StackOverflow, It clearly shows the following points.
+**If your passions and work are mutual, then developer as a professional career is a great choice.**
+**Non-conventional methods like freelancing and contracting will give more satisfaction compared to other employment types.**
+**Salary gives motivation towards job satisfaction, both are equally proportional to each other.**

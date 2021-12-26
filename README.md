@@ -157,6 +157,6 @@ There are avidence that salary gives motivation towards job satisfaction, both a
 ### Conclusion
 
 We talk about the parameter and job satisfaction based on the data provided by StackOverflow, It clearly shows the following points.
-**If your passions and work are mutual, then developer as a professional career is a great choice.**
-**Non-conventional methods like freelancing and contracting will give more satisfaction compared to other employment types.**
-**Salary gives motivation towards job satisfaction, both are equally proportional to each other.**
+- **If your passions and work are mutual, then developer as a professional career is a great choice.**
+- **Non-conventional methods like freelancing and contracting will give more satisfaction compared to other employment types.**
+- **Salary gives motivation towards job satisfaction, both are equally proportional to each other.**
